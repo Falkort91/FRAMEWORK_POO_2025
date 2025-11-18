@@ -1,0 +1,15 @@
+{
+    "name": "llecl/framework_poo_2025",
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "app/controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Falkort",
+            "email": "lleclercq91@outlook.com"
+        }
+    ],
+    "require": {}
+}

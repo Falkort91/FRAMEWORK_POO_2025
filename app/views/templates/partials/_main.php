@@ -8,7 +8,7 @@
         </div>
 
         <!-- ASIDE CATEGORIES -->
-         <?php include '../app/views/templates/partials/_aside.php'?>;
+         <?php include '../app/views/templates/partials/_aside.php'?>
         
       </div>
     </main>
