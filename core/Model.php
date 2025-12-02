@@ -2,7 +2,9 @@
 
 namespace Core;
 
-abstract class Model{
+
+abstract class Model
+{
     public $id, $created_at;
 
     //Liaison 1-N
@@ -15,18 +17,17 @@ abstract class Model{
         return $this->$prop;
     }
 
-    public function setField(string $fieldName) 
-    {   
-    $fieldWithY= (str_ends_with($fieldName, 'y')) ? substr($fieldName,0,-1) .'ie' : $fieldName;
+    public function setField(string $fieldName)
+    {
+        $fieldWithY = (str_ends_with($fieldName, 'y')) ? substr($fieldName, 0, -1) . 'ie' : $fieldName;
 
-    $repository='\App\Models\\'.ucfirst($fieldWithY).'sRepository';
-    
-    $fk=$fieldName.'_id';
+        $repository = '\App\Models\\' . ucfirst($fieldWithY) . 'sRepository';
 
-        if($this->$fieldName==NULL):
-             $this->$fieldName = $repository::findOneById($this->$fk);
+        $fk = $fieldName . '_id';
+
+        if ($this->$fieldName == NULL):
+            $this->$fieldName = $repository::findOneById($this->$fk);
         endif;
-
     }
 }
 
